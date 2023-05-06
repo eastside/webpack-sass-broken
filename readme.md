@@ -37,3 +37,19 @@ The project fails to compile with the following error:
     @ ./src/index.js 1:0-21
 
     webpack 5.82.0 compiled with 1 error in 622 ms
+
+
+## Is webpack the problem?
+
+I included another script, found in test-no-webpack-js. The custom function is the same. However, webpack has been removed from the equation. Indeed, the sass compilation works as expected.
+
+Try running the script:
+
+    node ./test-no-webpack.js
+
+And observe the output:
+
+    [ 10, 3 ]
+    { css: 'h1 {\n  font-weight: 1000;\n}', loadedUrls: [] }
+
+The arguments to the custom function in this case conform to sass-lang.com's documentation, and it compiles to the exepcted css.
